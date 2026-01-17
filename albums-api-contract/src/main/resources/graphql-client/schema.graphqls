@@ -1,0 +1,65 @@
+type Band {
+    id: ID!
+    bandName: String
+    bandCountry: String
+}
+
+type Album {
+    id: ID!
+    title: String
+    released: String
+    genre: String
+    catNum: String
+    band: Band
+    createdAt: String
+}
+
+type AlbumPage {
+    content: [Album]
+    pageNumber: Int
+    pageSize: Int
+    totalElements: Int
+    totalPages: Int
+    last: Boolean
+}
+
+type Query {
+    bands: [Band]
+    bandById(id: ID!): Band
+
+    albums(bandId: ID, genreFilter: String, page: Int = 0, size: Int = 10): AlbumPage
+    albumById(id: ID!): Album
+}
+
+input BandInput {
+    bandName: String!
+    bandCountry: String!
+}
+
+input AlbumInput {
+    title: String!
+    released: String!
+    genre: String!
+    catNum: String!
+    bandId: ID!
+}
+
+input UpdateAlbumInput {
+    title: String!
+    catNum: String!
+}
+
+input UpdateGenreInput {
+    genre: String!
+}
+
+type Mutation {
+    createBand(input: BandInput!): Band
+    updateBand(id: ID!, input: BandInput!): Band
+    deleteBand(id: ID!): ID
+
+    createAlbum(input: AlbumInput!): Album
+    updateAlbum(id: ID!, input: UpdateAlbumInput!): Album
+    updateAlbumGenre(id: ID!, input: UpdateGenreInput!): Album
+    deleteAlbum(id: ID!): ID
+}

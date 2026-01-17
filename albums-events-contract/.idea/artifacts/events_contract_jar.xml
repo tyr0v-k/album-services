@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="events-contract:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/events_contract_jar</output-path>
+    <root id="archive" name="events-contract.jar">
+      <element id="module-output" name="albums-events-contract" />
+    </root>
+  </artifact>
+</component>
