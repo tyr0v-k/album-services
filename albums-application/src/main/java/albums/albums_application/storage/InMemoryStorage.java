@@ -29,7 +29,7 @@ public class InMemoryStorage {
         AlbumResponse album2 = new AlbumResponse(UUID.randomUUID().toString(), "Игра В Бисер Перед Свиньями", LocalDate.of(1999, 1, 1), "Punk Rock", "HCD-003", band1, LocalDateTime.now());
         albums.put(album2.getId(), album2);
 
-        AlbumResponse album3 = new AlbumResponse(UUID.randomUUID().toString(), "Rainbow Nights", LocalDate.of(2020, 4, 30), "Psychedelic Rock", "CPR-020", band1, LocalDateTime.now());
+        AlbumResponse album3 = new AlbumResponse(UUID.randomUUID().toString(), "Rainbow Nights", LocalDate.of(2020, 4, 30), "Psychedelic Rock", "CPR-020", band2, LocalDateTime.now());
         albums.put(album3.getId(), album3);
     }
 }

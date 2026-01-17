@@ -30,7 +30,7 @@ public class NotificationListener {
         log.info("Получено событие из RabbitMQ: {}", event);
 
         String userMessage = String.format(
-                "{\"type\": \"NEW_RATING\", \"albumId\": %s, \"score\": %d, \"verdict\": \"%s\"}",
+                "{\"type\": \"NEW_RATING\", \"albumId\": \"%s\", \"score\": %d, \"verdict\": \"%s\"}",
                 event.albumId(), event.score(), event.verdict()
         );
 

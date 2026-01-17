@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/bands")
 public interface BandApi {
 
-    @Operation(summary = "Получить всех групп")
+    @Operation(summary = "Получить список всех групп")
     @ApiResponse(responseCode = "200", description = "Список групп")
     @GetMapping
     CollectionModel<EntityModel<BandResponse>> getAllBands();
